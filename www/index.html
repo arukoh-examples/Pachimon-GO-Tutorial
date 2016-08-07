@@ -47,6 +47,11 @@
             document.getElementById('settings').hideItems();
             document.getElementById('user-modal').show();
         };
+        
+        function changeAvatarSkin(skin) {
+            avatar.changeSkin(skin);
+            document.getElementById('user-modal').hide();
+        };
     </script>
 </head>
 <body>
@@ -71,6 +76,11 @@
         <ons-page>
             <ons-toolbar><div class="center">User Settings</div></ons-toolbar>
             <p><ons-button onclick="document.getElementById('user-modal').hide()">Close</ons-button></p>
+            <ons-list>
+                <ons-list-header>Avatar Skins</ons-list-header>
+                <ons-list-item tappable onclick="changeAvatarSkin('img/avatar/char.png');">Default</ons-list-item>
+                <ons-list-item tappable onclick="changeAvatarSkin('img/avatar/batman.png');">Batman</ons-list-item>
+            </ons-list>
         </ons-page>
     </ons-modal>
 </body>
