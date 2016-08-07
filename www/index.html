@@ -21,8 +21,9 @@
 
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="js/Avatar.js"></script>
+    <script src="js/CameraView.js"></script>
     <script>
-        var avatar;
+        var avatar, cameraView;
         
         ons.ready(function() {
             var navigator = document.getElementById('navigator');
@@ -37,10 +38,20 @@
                 map: map,
                 position: {lat: 35.692141, lng: 139.771225}
             });
+            marker.addListener('click', function() {
+                navigator.pushPage('page2.html');
+            });
             
             avatar = new Avatar(document.getElementById('avatar'), 'img/avatar/char.png');
             var page1 = document.getElementById('page1');
             avatar.move(page1.offsetWidth/2, page1.offsetHeight/2);
+            
+            navigator.addEventListener('init', function(event) {
+                var page = event.target;
+                if (page.id === 'page2') {
+                    cameraView = new CameraView(document.getElementById("cameraview"));
+                }
+            });
         });
         
         function onClickUserIcon() {
@@ -69,6 +80,12 @@
                     <ons-icon icon="fa-user" onclick="onClickUserIcon()"></ons-icon>
                 </ons-speed-dial-item>
             </ons-speed-dial>
+        </ons-page>
+    </ons-template>
+    
+    <ons-template id="page2.html">
+        <ons-page id="page2">
+            <div id="cameraview" style="width:100%; height:100%;"></div>
         </ons-page>
     </ons-template>
     
