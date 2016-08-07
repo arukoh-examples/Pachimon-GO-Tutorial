@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <script src="lib/onsenui/js/onsenui.min.js"></script>
+    
+    <script src="js/vendor/tquery/tquery-bundle.js"></script>
+    <script src="js/vendor/tquery/tquery.minecraftchar.js"></script>
+    <script src="js/vendor/js-aruco/jkl-dumper.js"></script>
+    <script src="js/vendor/js-aruco/polyfill.js"></script>
+    <script src="js/vendor/js-aruco/cv.js"></script>
+    <script src="js/vendor/js-aruco/aruco.js"></script>
+
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        ons.ready(function() {
+            var navigator = document.getElementById('navigator');
+        });
+    </script>
+</head>
+<body>
+    <ons-navigator id="navigator" page="page1.html"></ons-navigator>
+    
+    <ons-template id="page1.html">
+        <ons-page id="page1">
+            <p>This is the first page.</p>
+        </ons-page>
+    </ons-template>
+</body>
+</html>
