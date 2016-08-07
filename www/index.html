@@ -22,6 +22,7 @@
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="js/Avatar.js"></script>
     <script src="js/CameraView.js"></script>
+    <script src="js/AR.js"></script>
     <script>
         var avatar, cameraView;
         
@@ -49,7 +50,7 @@
             navigator.addEventListener('init', function(event) {
                 var page = event.target;
                 if (page.id === 'page2') {
-                    cameraView = new CameraView(document.getElementById("cameraview"));
+                    cameraView = new CameraView(document.getElementById("cameraview"), ar);
                 }
             });
         });
