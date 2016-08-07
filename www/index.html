@@ -42,6 +42,11 @@
             var page1 = document.getElementById('page1');
             avatar.move(page1.offsetWidth/2, page1.offsetHeight/2);
         });
+        
+        function onClickUserIcon() {
+            document.getElementById('settings').hideItems();
+            document.getElementById('user-modal').show();
+        };
     </script>
 </head>
 <body>
@@ -56,10 +61,17 @@
                     <ons-icon icon="fa-gear"></ons-icon>
                 </ons-fab>
                 <ons-speed-dial-item>
-                    <ons-icon icon="fa-user"></ons-icon>
+                    <ons-icon icon="fa-user" onclick="onClickUserIcon()"></ons-icon>
                 </ons-speed-dial-item>
             </ons-speed-dial>
         </ons-page>
     </ons-template>
+    
+    <ons-modal id="user-modal">
+        <ons-page>
+            <ons-toolbar><div class="center">User Settings</div></ons-toolbar>
+            <p><ons-button onclick="document.getElementById('user-modal').hide()">Close</ons-button></p>
+        </ons-page>
+    </ons-modal>
 </body>
 </html>
